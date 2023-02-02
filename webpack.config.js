@@ -24,7 +24,7 @@ module.exports = {
     host: "localhost",
     port: 9000,
     liveReload: false,
-    server: "https",
+    // server: "https",
   },
   module: {
     rules: [
