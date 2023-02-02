@@ -1,0 +1,50 @@
+{
+  "env": {
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": ["off"]
+      }
+    }
+  ],
+  "rules": {
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "import/prefer-default-export": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "no-console": 0,
+    "no-debugger": 2,
+    "no-alert": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".tsx", ".ts", ".js", ".jsx", ".json"],
+        "map": [["components", "./src/components"]]
+      },
+      "typescript": {
+        "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
